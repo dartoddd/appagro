@@ -1,0 +1,18 @@
+<md-card *ngIf="!token();else sair">
+  
+    <p>
+      <md-input-container>
+        <input mdInput placeholder="E-mail" #email value="dartoddd@gmail.com" required>
+      </md-input-container>
+    </p><p>
+      <md-input-container>
+        <input type="password" mdInput #password placeholder="Senha" value="12341234" required>
+      </md-input-container>
+    </p>
+    <p>
+      <button md-raised-button (click)="authenticate(email.value, password.value); password.value=''">Entrar</button>
+    </p>
+
+</md-card>
+
+<ng-template #sair><button md-raised-button (click)="logout()">Sair</button></ng-template>
