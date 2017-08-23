@@ -1,0 +1,43 @@
+<md-card *ngIf="authenticate.token()">
+  <div *ngIf="errorMessage" [ngClass] = "'error'"> {{errorMessage}} </div> 
+  <div *ngIf="successMessage" [ngClass] = "'success'"> {{successMessage}} </div> 
+  
+  <p>
+    <md-input-container>
+      <input [(ngModel)]="produto.nome" mdInput placeholder="Nome"  value="">
+    </md-input-container>
+  </p><p>
+    <md-input-container>
+      <textarea [(ngModel)]="produto.descricao" mdInput placeholder="Descrição"  value="Aqui vai uma breve descrição do produto"></textarea>
+    </md-input-container>
+  </p><p>
+    <md-select [(ngModel)]="produto.formato" placeholder="Formato da embalagem do produto" (ngModelChange)="formatoMudou()" >
+      <md-option *ngFor="let formato of formatos" [value]="formato.value">
+        {{ formato.viewValue }}
+      </md-option>
+    </md-select>
+  </p><p>
+    <md-input-container>
+      <input [(ngModel)]="produto.comprimento" type="number" mdInput placeholder="Comprimento (cm)">
+    </md-input-container>
+  </p><p>
+    <md-input-container *ngIf="produto.formato == 1" >
+      <input [(ngModel)]="produto.altura" type="number" mdInput placeholder="Altura (cm)">
+    </md-input-container>
+  </p><p>
+    <md-input-container *ngIf="produto.formato != 2">
+      <input [(ngModel)]="produto.largura" type="number" mdInput placeholder="Largura (cm)">
+    </md-input-container>
+  </p><p>
+    <md-input-container *ngIf="produto.formato == 2">
+      <input [(ngModel)]="produto.diametro" type="number" mdInput placeholder="Diametro (cm)">
+    </md-input-container>
+  </p><p>
+    <md-input-container>
+      <input [(ngModel)]="produto.peso" type="number" mdInput placeholder="Peso (kg) [ex: 1.3]">
+    </md-input-container>
+  </p>
+  <p>
+    <button md-raised-button (click)="salvar();">Salvar</button>
+  </p>
+</md-card>

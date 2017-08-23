@@ -8,7 +8,9 @@ import { MdMenuModule,
          MdCardModule,
          MdInputModule, 
          MdButtonModule, 
-         MdCheckboxModule } from '@angular/material';
+         MdCheckboxModule,
+         MdSelectModule ,
+         MdSnackBarModule} from '@angular/material';
 
 @NgModule({
   imports: [
@@ -20,7 +22,9 @@ import { MdMenuModule,
     MdMenuModule,
     MdCardModule,
     MdToolbarModule,
-    MdIconModule
+    MdIconModule,
+    MdSelectModule,
+    MdSnackBarModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -31,7 +35,9 @@ import { MdMenuModule,
     MdMenuModule,
     MdCardModule,
     MdToolbarModule,
-    MdIconModule
+    MdIconModule,
+    MdSelectModule,
+    MdSnackBarModule
   ]
 })
 export class MaterialModule { }

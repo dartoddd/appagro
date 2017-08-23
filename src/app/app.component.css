@@ -1,0 +1,39 @@
+html, body, material-app, md-sidenav-container, .my-content {
+  margin: 0;
+  width: 100%;
+  min-height: 300px;
+}
+
+.page-title {
+  padding: 0 14px;
+}
+
+.page-title-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-sidenav{
+    width: 200px;
+    background-color:#303f9f;
+}
+
+
+/* The navigation menu links */
+.mat-sidenav a {
+    padding: 8px 8px 8px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.mat-sidenav a:hover, .offcanvas a:focus{
+    color: #818181;
+}
+
+.mat-sidenav md-icon{
+    color: #ffffff;
+    padding: 8px 8px 8px 8px;
+}

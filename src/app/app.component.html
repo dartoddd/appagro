@@ -1,20 +1,27 @@
-<md-sidenav-container class="example-container">
-  <md-sidenav #sidenav>
-    <a md-menu-item routerLink="/logon" routerLinkActive="active" (click)="sidenav.close()"> Login </a>
-    <button md-menu-item> Help </button>
-  </md-sidenav>
+<md-sidenav-container>
   <md-toolbar color="primary">
 
-      <button _ngcontent-c13="" class="sidenav-toggle mat-button" md-button="" (click)="sidenav.open()" >
+      <button _ngcontent-c13="" class="sidenav-toggle mat-button" md-button="" (click)="sidenav.toggle()" >
         <span class="mat-button-wrapper">
           <md-icon _ngcontent-c13="" class="mat-icon material-icons" role="img" aria-hidden="true">menu</md-icon>
         </span>
-        <div class="mat-button-ripple mat-ripple" md-ripple=""></div><div class="mat-button-focus-overlay"></div>
       </button>
       
-      <span>AppAgro</span>
-      <span class="example-spacer"></span>
+      
+      <span class="page-title">AppAgro</span>
+      <span class="page-title-spacer"></span>
+
   </md-toolbar>
 
-  <router-outlet></router-outlet>
+  <md-sidenav #sidenav opened="true" mode="side" >
+    <!--<md-toolbar class="md-theme-indigo" color="primary">
+      <h1 class="md-toolbar-tools">Menu</h1>
+    </md-toolbar>-->
+      <a md-menu-item routerLink="/logon" routerlinkactive="active" (click)="sidenav.close()"> <md-icon class="mat-icon material-icons">face</md-icon>Login</a>
+      <a md-menu-item routerLink="/produtos" routerLinkActive="active" (click)="sidenav.close()"> <md-icon>view_list</md-icon> <span class="page-title-spacer"></span> Produtos</a>
+      <a md-menu-item routerLink="/produto/add" routerLinkActive="active" (click)="sidenav.close()"> <md-icon>add_circle_outline</md-icon>Produto</a>
+    </md-sidenav>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
 </md-sidenav-container>
